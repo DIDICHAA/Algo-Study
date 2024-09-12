@@ -31,8 +31,6 @@ def oob(i, j):
 
 
 def check_direction(s, d, i, j):
-    standard_r = 2 * (R-1)
-    standard_c = 2 * (C-1)
     cnt = 0
 
     if d == 1:
@@ -77,7 +75,6 @@ def check_direction(s, d, i, j):
             if j == 0:
                 cnt += 1
 
-
     else:
         s %= standard_c
         while s > 0:
@@ -102,9 +99,6 @@ def check_direction(s, d, i, j):
 
 
 def switch_shark(i, j, ni, nj, S):
-    standard_r = 2 * (R-1)
-    standard_c = 2 * (C-1)
-
     cnt = 0
     if ni >= R:
         while 0 <= i < R and S > 0:
@@ -231,6 +225,8 @@ def get_shark(si, sj):
 
 R, C, M = map(int, input().split())
 sharks = [[[] for _ in range(C)] for _ in range(R)]
+standard_r = 2 * (R - 1)
+standard_c = 2 * (C - 1)
 
 for _ in range(M):
     r, c, s, d, z = map(int, input().split())
