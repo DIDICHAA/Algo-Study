@@ -149,19 +149,18 @@ def simulate(board, d):
 def make_combs(cnt, board, tmp_maxi):
     global maxi
 
-    if tmp_maxi < maxi // (2 ** (5 - cnt)):
+    ttmp = sum(board, [])
+    t_num = max(ttmp)
+
+    if t_num < maxi // (2 ** (5 - cnt)):
         return
 
     if cnt == 5:
-        ttmp = sum(board, [])
-        t_num = max(ttmp)
         maxi = max(t_num, maxi)
         return
 
-    copied_arr = [lst[:] for lst in board]
-
     for i in range(1, 5):
-        calcul_arr, tmp_maxi = simulate(copied_arr, i)
+        calcul_arr, tmp_maxi = simulate(board, i)
         make_combs(cnt+1, calcul_arr, tmp_maxi)
 
 
