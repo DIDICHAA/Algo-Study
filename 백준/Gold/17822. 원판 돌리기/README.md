@@ -29,7 +29,7 @@
 
 <p>아래 그림은 N = 3, M = 4인 경우이다.</p>
 
-<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/5968435b-a1af-4e2a-a612-baff989f44b2/-/preview/" style="width: 300px; height: 295px;"></p>
+<p style="text-align: center;"><img alt="" src="" style="width: 300px; height: 295px;"></p>
 
 <p>원판의 회전은 독립적으로 이루어진다. 2번 원판을 회전했을 때, 나머지 원판은 회전하지 않는다. 원판을 회전시킬 때는 수의 위치를 기준으로 하며, 회전시킨 후의 수의 위치는 회전시키기 전과 일치해야 한다.</p>
 
@@ -39,9 +39,9 @@
 <table class="table table-bordered" style="width:100%;">
 	<tbody>
 		<tr>
-			<td style="width: 33%; text-align: center;"><img alt="" src="https://upload.acmicpc.net/977a4e67-5aa7-40d4-92ee-5f59ac75aadb/-/preview/" style="width: 300px; height: 295px;"></td>
-			<td style="width: 34%; text-align: center;"><img alt="" src="https://upload.acmicpc.net/f2c1e70b-0a84-46c3-b38d-f7395219b00a/-/preview/" style="width: 300px; height: 295px;"></td>
-			<td style="width: 33%; text-align: center;"><img alt="" src="https://upload.acmicpc.net/39d57771-6162-49f5-97b7-0d9fd8911222/-/preview/" style="width: 300px; height: 295px;"></td>
+			<td style="width: 33%; text-align: center;"><img alt="" src="" style="width: 300px; height: 295px;"></td>
+			<td style="width: 34%; text-align: center;"><img alt="" src="" style="width: 300px; height: 295px;"></td>
+			<td style="width: 33%; text-align: center;"><img alt="" src="" style="width: 300px; height: 295px;"></td>
 		</tr>
 		<tr>
 			<td style="width: 33%; text-align: center;">1번 원판을 시계 방향으로 1칸 회전</td>
