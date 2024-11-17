@@ -66,7 +66,13 @@ def bfs():
 T = int(input())
 for tc in range(T):
     N, M = map(int, input().split())
-    board = [list(map(str, input())) for _ in range(N)]
+    board = [['.'] * (M + 2)]
+    for _ in range(N):
+        row = ['.'] + list(input().strip()) + ['.']
+        board.append(row)
+    board.append(['.'] * (M + 2))
+    N += 2
+    M += 2
     already = input()
     DIR = [(-1, 0), (0, 1), (1, 0), (0, -1)]
     key_candi = 'abcdefghijklmnopqrstuvwxyz'
@@ -79,57 +85,17 @@ for tc in range(T):
     sset = set()
 
     for i in range(N):
-        if board[i][0] == '$':
-            sset.add((i, 0))
-        elif board[i][0] == '.':
-            sset.add((i, 0))
-        elif board[i][0] in door_candi:
-            if board[i][0].lower() in already:
-                sset.add((i, 0))
-            else:
-                visited[i][0] = True
-        elif board[i][0] in key_candi and board[i][0] not in already:
-            already += board[i][0]
+        if board[i][0] == '.':
             sset.add((i, 0))
 
-        if board[i][M-1] == '$':
-            sset.add((i, M-1))
-        elif board[i][M-1] == '.':
-            sset.add((i, M-1))
-        elif board[i][M-1] in door_candi:
-            if board[i][M-1].lower() in already:
-                sset.add((i, M-1))
-            else:
-                visited[i][M-1] = True
-        elif board[i][M-1] in key_candi and board[i][M-1] not in already:
-            already += board[i][M-1]
+        if board[i][M-1] == '.':
             sset.add((i, M-1))
 
     for j in range(M):
-        if board[0][j] == '$':
-            sset.add((0, j))
-        elif board[0][j] == '.':
-            sset.add((0, j))
-        elif board[0][j] in door_candi:
-            if board[0][j].lower() in already:
-                sset.add((0, j))
-            else:
-                visited[0][j] = True
-        elif board[0][j] in key_candi and board[0][j] not in already:
-            already += board[0][j]
+        if board[0][j] == '.':
             sset.add((0, j))
 
-        if board[N-1][j] == '$':
-            sset.add((N-1, j))
-        elif board[N-1][j] == '.':
-            sset.add((N-1, j))
-        elif board[N-1][j] in door_candi:
-            if board[N-1][j].lower() in already:
-                sset.add((N-1, j))
-            else:
-                visited[N-1][j] = True
-        elif board[N-1][j] in key_candi and board[N-1][j] not in already:
-            already += board[N-1][j]
+        if board[N-1][j] == '.':
             sset.add((N-1, j))
 
     for i in range(N):
