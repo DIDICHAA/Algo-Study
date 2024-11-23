@@ -55,12 +55,8 @@ def make_candi_c(cnt, idx, lst):
 
 
 def make_p(cnt, lst):
-
-    if lst in n_lst:
-        return
-
     if cnt == G + R:
-        n_lst.append(lst[:])
+        solve(lst)
         return
 
     for i in range(2):
@@ -78,6 +74,12 @@ def make_p(cnt, lst):
             nutrition[i] += 1
 
 
+def solve(nutri):
+    for candi in c_lst:
+        bfs(nutri, candi)
+    return
+
+
 N, M, G, R = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(N)]
 DIR = [(-1, 0), (0, 1), (1, 0), (0, -1)]
@@ -92,13 +94,6 @@ nutrition = [G, R]
 ans = 0
 c_lst = []
 make_candi_c(0, 0, [])
-
-n_lst = []
-used = [False] * (G + R)
 make_p(0, [])
-
-for nutri in n_lst:
-    for candi in c_lst:
-        bfs(nutri, candi)
 
 print(ans)
