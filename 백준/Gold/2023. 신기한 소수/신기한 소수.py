@@ -7,26 +7,23 @@ def check(lst):
     return True
 
 
-def make_p(cnt, lst):
+def make_p(num, cnt):
     if cnt == N:
-        print(''.join(lst))
+        print(num)
         return
 
-    for i in range(10):
-        lst.append(nums[i])
+    for i in range(5):
+        num += nums[i]
 
-        if lst[0] not in '2357':
-            lst.pop()
+        if not check(num):
+            num = num[:-1]
             continue
 
-        if lst and not check(lst):
-            lst.pop()
-            continue
-
-        make_p(cnt+1, lst)
-        lst.pop()
+        make_p(num, cnt+1)
+        num = num[:-1]
 
 
 N = int(input())
-nums = '1234567890'
-make_p(0, [])
+nums = '13579'
+for n in '2357':
+    make_p(n, 1)
