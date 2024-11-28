@@ -15,7 +15,7 @@ def make_p(cnt, lst):
     for i in range(10):
         lst.append(nums[i])
 
-        if lst[0] == '0' or lst[0] == '1':
+        if lst[0] not in '2357':
             lst.pop()
             continue
 
