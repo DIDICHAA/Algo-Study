@@ -7,12 +7,12 @@ def solution(n, weak, dist):
     new_weak = weak[:]
     for i in range(len(weak)):
         new_weak.append(weak[i] + n)
+        
     cases = list(permutations(dist, len(dist)))
 
     for s in range(len(weak)):
         for case in cases:
-            cnt = 1
-            now = s
+            cnt, now = 1, s
             for i in range(1, len(weak)):
                 next = s+i
                 where = new_weak[next] - new_weak[now]
