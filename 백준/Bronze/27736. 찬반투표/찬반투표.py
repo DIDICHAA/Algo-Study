@@ -10,9 +10,9 @@ for n in vote:
     else:
         b += 1
 
-if k != 0 and N//2 <= k:
+if k != 0 and N <= k*2:
     print('INVALID')
 elif b >= c:
     print('REJECTED')
-else:
+elif c > b:
     print('APPROVED')
